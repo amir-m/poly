@@ -1,0 +1,115 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input-decorator.html">
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../bower_components/paper-dropdown/paper-dropdown.html">
+<link rel="import" href="../../bower_components/core-menu/core-menu.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/core-header-panel/core-header-panel.html">
+<!-- <link rel="import" href="../../bower_components/paper-date-picker/paper-date-picker-dialog.html"> -->
+
+<polymer-element name="user-profile" attributes="">
+  <template>
+    <app-global id="globals"></app-global>
+    <link rel="stylesheet" href="user-profile.css">
+
+    <!-- First Name -->
+    <paper-input-decorator label="{{first_name_label}}" class="max-width" floatingLabel="true">
+      <input is="core-input">
+    </paper-input-decorator>
+
+    <!-- Last Name -->
+    <paper-input-decorator label="{{last_name_label}}" class="max-width" floatingLabel="true">
+      <input is="core-input">
+    </paper-input-decorator>
+
+    <!-- Email -->
+
+    <!-- Address -->
+    
+    <!-- 
+     <core-header-panel flex >
+      <core-toolbar>
+        
+        <div class="core-header">Address</div>
+        <div class="content">
+        -->
+          <!-- Province -->
+          <paper-dropdown-menu label="Province">
+            <paper-dropdown class="dropdown">
+                <core-menu class="menu" id="provinceDropDown" selected="{{ selectedProvince }}" 
+                            on-core-select="{{ provinceChanged }}" >
+                  <template repeat="{{ province in $.globals.provinces }}">
+                    <paper-item>{{ province }}</paper-item>
+                  </template>
+                </core-menu>
+            </paper-dropdown>
+          </paper-dropdown-menu>
+
+          <!-- City -->
+          <paper-dropdown-menu id="cityDropDown" label="City" hidden>
+            <paper-dropdown class="dropdown">
+                <core-menu class="menu" selected="{{ selectedCity }}" 
+                            on-core-select="{{ cityChanged }}" >
+                  <template repeat="{{ city in cities }}">
+                    <paper-item>{{ city }}</paper-item>
+                  </template>
+                </core-menu>
+            </paper-dropdown>
+          </paper-dropdown-menu>
+
+    <!-- Postal Code -->
+
+      <paper-input-decorator label="{{postal_code_label}}" floatingLabel="true">
+        <input is="core-input">
+      </paper-input-decorator>
+
+    <!--         
+        </div>
+      </core-toolbar>
+    </core-header-panel> 
+    -->
+
+
+
+    <!-- Phone -->
+
+      <paper-input-decorator label="{{telephone_label}}" floatingLabel="true">
+        <input is="core-input">
+      </paper-input-decorator>    
+
+    <!-- Employer -->
+      
+      <paper-input-decorator label="{{employer_label}}" floatingLabel="true">
+        <input is="core-input">
+      </paper-input-decorator> 
+
+    <!-- Marital Status -->
+      <paper-dropdown-menu id="maritalStatusDropDown" label="{{marital_status_label}}">
+        <paper-dropdown class="dropdown">
+            <core-menu class="menu" selected="{{ selectedMarital }}" 
+              on-core-select="{{ maritalChanged }}" >
+              <template repeat="{{ marital in marital_statuses }}">
+                <paper-item>{{ marital }}</paper-item>
+              </template>
+            </core-menu>
+        </paper-dropdown>
+      </paper-dropdown-menu>    
+
+
+    <!-- Children -->
+      <paper-input-decorator label="{{children_label}}" floatingLabel="true">
+        <input is="core-input">
+      </paper-input-decorator>
+
+    <!-- Height -->
+      <paper-input-decorator label="{{height_label}}" floatingLabel="true">
+        <input is="core-input">
+      </paper-input-decorator>
+
+    <!-- Date of Birth -->
+    <!-- <paper-date-picker-dialog id="picker" date="2000/1/1"></paper-date-picker-dialog> -->
+
+  </template>
+  <script src="../../elements/user-profile/user-profile.js"></script>
+</polymer-element>

@@ -28,6 +28,11 @@ app.get('/', function(req, res) {
   // res.sendFile('index.html');
 });
 
+app.use('/api/*', function(req, res, next) {
+    // if ()
+    next();
+});
+
 app.use(express.static(require('path').join(__dirname, 'app')));
 
 app.use('/users', users);

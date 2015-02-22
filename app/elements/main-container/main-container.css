@@ -1,3 +1,15 @@
 :host {
   display: block;
 }
+
+.core-toolbar {
+	width: 100%;
+	position: fixed;
+	opacity: 1;
+}
+
+.user-profile {
+	position: relative;
+	height: 2000px;
+	top: 64px;
+}
